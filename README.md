@@ -28,7 +28,7 @@ Crafted with MongoDB and Python, this engine generates immersive narratives for 
 
 ### 👥 Personas 
 
-Personas, developed as Python classes, imitate users with various backgrounds and objectives. They're vital for assessing LLM adaptability and safety across different conversational styles. 🌈
+Personas, developed as Python classes, imitate users with various backgrounds and objectives. They're vital for assessing LLM adaptability and safety across different conversational styles. 
 
 ### 🌐 LLM Integrator
 
@@ -94,4 +94,4 @@ The methodology includes scenario configuration, persona sampling, edge case int
 
 Key evaluation areas include ethical metrics, safety heuristics, realism assessment, and framework optimization. 🎯
 
-🔄 This cyclical process continuously advances LLM behavior towards higher safety and ethical standards. 🌈
+🔄 This cyclical process continuously advances LLM behavior towards higher safety and ethical standards. 
