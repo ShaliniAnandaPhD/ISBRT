@@ -95,3 +95,46 @@ The methodology includes scenario configuration, persona sampling, edge case int
 Key evaluation areas include ethical metrics, safety heuristics, realism assessment, and framework optimization. 🎯
 
 🔄 This cyclical process continuously advances LLM behavior towards higher safety and ethical standards. 
+
+Here is a description of their functionalities and basic instructions on how to run them. 
+
+1. **`data_manager.py`**
+   - **Description**: Manages data storage, retrieval, and management using SQLite.
+   - **How to Run**: This module is generally used as an import in other scripts. Ensure SQLite is installed and operational on your system. Use the methods within other scripts to store and retrieve data.
+
+2. **`simulation_controller.py`**
+   - **Description**: Manages the lifecycle of simulation scenarios using threading.
+   - **How to Run**: Import this module into your main script or any script where you need to control simulations. Call the methods to start, pause, resume, or stop simulations.
+
+3. **`metrics_aggregator.py`**
+   - **Description**: Aggregates performance and response metrics, providing basic statistical analysis.
+   - **How to Run**: Typically used as a library. Import it into your analysis scripts, and feed it with data to get aggregated metrics.
+
+4. **`content_generator.py`**
+   - **Description**: Dynamically generates content for scenarios and personas using randomization techniques.
+   - **How to Run**: Import this module in scripts where you need to generate random scenarios or personas. Call the provided methods to generate content.
+
+5. **`ui_manager.py`**
+   - **Description**: Provides a web-based graphical user interface for the system using Flask.
+   - **How to Run**: Run this script directly (`python ui_manager.py`). Ensure Flask is installed. Access the web interface via a web browser at the given localhost port (usually `http://127.0.0.1:5000/`).
+
+6. **`error_logger.py`**
+   - **Description**: Captures and logs errors and anomalies, offering different logging levels.
+   - **How to Run**: Use this module as an import in other scripts where logging is required. Initialize the logger and call its methods to log messages.
+
+7. **`security_compliance.py`**
+   - **Description**: Checks data for security compliance against predefined rules.
+   - **How to Run**: Import into scripts where data compliance needs to be checked. Use its methods to validate data against your compliance rules.
+
+8. **`model_trainer.py`**
+   - **Description**: Manages the training and updating of machine learning models, assuming a simple model structure.
+   - **How to Run**: Import into your machine learning scripts. Provide it with data for training or updating models. Requires scikit-learn and joblib.
+
+9. **`analytics_insights.py`**
+   - **Description**: Analyzes scenarios and personas, offering insights through basic data analysis techniques.
+   - **How to Run**: Used as an import in scripts where you need to analyze scenarios or personas. Feed it with data to get analytics insights.
+
+10. **`ci_cd_pipeline.py`**
+    - **Description**: Simulates a basic CI/CD pipeline process for Python projects, encompassing testing, building, and deployment stages.
+    - **How to Run**: Run this script directly (`python ci_cd_pipeline.py`). It's more of a conceptual representation and would usually be integrated with actual CI/CD tools like Jenkins or GitHub Actions in a real-world scenario.
+
