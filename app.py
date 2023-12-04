@@ -17,19 +17,26 @@ persona = content_gen.generate_persona_content()
 st.write('Scenario:', scenario)
 st.write('Persona:', persona)
 
-# Display controls for simulation (placeholder)
+# Simulation controls with status updates
 st.header('Simulation Controls')
 if st.button('Start Simulation'):
     logger.log_info("Simulation started")
-    # Start simulation code
-if st.button('Stop Simulation'):
+    st.write('Simulation Status: Started')
+elif st.button('Stop Simulation'):
     logger.log_info("Simulation stopped")
-    # Stop simulation code
+    st.write('Simulation Status: Stopped')
 
-# Display logs (placeholder)
+# Display logs
 st.header('System Logs')
-st.text_area('Logs', value='Here the logs will be displayed...', height=150)
+# Assuming logs are written to 'error.log'
+log_file = 'error.log'
+with open(log_file, "r") as file:
+    logs = file.read()
+st.text_area('Logs', value=logs, height=150)
 
-# Display analytics (placeholder)
+# Display analytics
 st.header('Analytics & Insights')
-st.write('Analytics data will be displayed here...')
+# Example: display a simple analysis
+st.write('Average Age in Personas:', analytics.average_age([persona]))
+
+
