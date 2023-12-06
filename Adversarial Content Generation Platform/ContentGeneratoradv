@@ -31,3 +31,6 @@ class ContentGenerator:
     def randomize_prompt_creation(self):
         methods = [self.generate_ambiguous_prompt, self.generate_ethical_scenario, self.generate_logical_fallacy]
         return random.choice(methods)()
+
+
+
