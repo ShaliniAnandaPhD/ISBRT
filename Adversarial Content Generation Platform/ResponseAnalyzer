@@ -1,0 +1,23 @@
+class ResponseAnalyzer:
+    def __init__(self):
+        pass
+
+    def analyze_bias(self, prompt, response):
+        bias_indicators = ["always", "never", "only"]
+        bias_detected = any(indicator in response for indicator in bias_indicators)
+        return "Bias Detected" if bias_detected else "No Obvious Bias"
+
+    def check_logical_consistency(self, prompt, response):
+        if "elephant" in prompt and "cannot" not in response:
+            return "Logical Inconsistency Detected"
+        return "Seems Logically Consistent"
+
+    def analyze_ethical_reasoning(self, prompt, response):
+        if "ethical" in prompt and "depends" in response:
+            return "Ethical Reasoning Considered"
+        return "Ethical Reasoning Unclear"
+
+    def generate_report(self, prompt, response, analyses):
+        report = f"Prompt: {prompt}\nResponse: {response}\n"
+        report += "\n".join([f"{analysis}: {result}" for analysis, result in analyses.items()])
+        return report
