@@ -1,0 +1,37 @@
+class PlatformController:
+    def __init__(self, llm_integration, content_generator, response_analyzer, data_manager):
+        self.llm_integration = llm_integration
+        self.content_generator = content_generator
+        self.response_analyzer = response_analyzer
+        self.data_manager = data_manager
+
+    def run_test_cycle(self):
+        # Generate a prompt using the ContentGenerator
+        prompt = self.content_generator.randomize_prompt_creation()
+
+        # Send this prompt to the LLM and get the response
+        response = self.llm_integration.send_prompt(prompt)
+
+        # Analyze the response using the ResponseAnalyzer
+        analysis = self.response_analyzer.analyze_response(prompt, response)
+
+        # Store the results using DataManager
+        self.data_manager.insert_test_data(prompt, response, str(analysis))
+
+        # Return the analysis for immediate viewing
+        return analysis
+
+# Testing this
+# so initialize the components
+content_generator = ContentGenerator()
+response_analyzer = ResponseAnalyzer()
+data_manager = DataManager('test_data.db')  # Example database file
+openai_integration = OpenAIIntegration('your_openai_api_key')
+
+# Create the PlatformController instance
+platform_controller = PlatformController(openai_integration, content_generator, response_analyzer, data_manager)
+
+# Run a test cycle
+analysis_result = platform_controller.run_test_cycle()
+print("Analysis Result:", analysis_result)
+
