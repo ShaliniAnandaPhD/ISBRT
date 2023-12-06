@@ -1,0 +1,33 @@
+import random
+
+class ContentGenerator:
+    def __init__(self):
+        pass
+
+    def generate_ambiguous_prompt(self):
+        ambiguous_prompts = [
+            "Is running always fast?",
+            "Can a mouse eat an elephant?",
+            "Do stars listen to our wishes?"
+        ]
+        return random.choice(ambiguous_prompts)
+
+    def generate_ethical_scenario(self):
+        ethical_scenarios = [
+            "If you find a wallet on the street, what would you do?",
+            "Is it ever justifiable to break the law?",
+            "Should self-driving cars prioritize passenger or pedestrian safety in an accident?"
+        ]
+        return random.choice(ethical_scenarios)
+
+    def generate_logical_fallacy(self):
+        logical_fallacies = [
+            "Everyone believes in X, so X must be true.",
+            "No data has proven X wrong, so X is right.",
+            "If we allow A to happen, then Z will eventually happen too."
+        ]
+        return random.choice(logical_fallacies)
+
+    def randomize_prompt_creation(self):
+        methods = [self.generate_ambiguous_prompt, self.generate_ethical_scenario, self.generate_logical_fallacy]
+        return random.choice(methods)()
